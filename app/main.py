@@ -1,12 +1,11 @@
 from agent import create_agent
-from agents import Agent, Runner, function_tool, set_trace_processors
+from agents import Runner, set_trace_processors
 import asyncio
-from dotenv import load_dotenv, find_dotenv
 from langsmith.wrappers import OpenAIAgentsTracingProcessor
 
 async def main():
     agent = create_agent()
-    question = "What is the weather in Berlin?"
+    question = input("Ask questions about a private document collection and get grounded, cited answers.\n")
     result = await Runner.run(agent, question)
     print(result.final_output)
 
