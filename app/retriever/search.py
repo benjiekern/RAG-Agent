@@ -26,7 +26,7 @@ def search():
     results = []
     for i, each in enumerate(dot_products):
         if a_magnitude[i] == 0 or b_magnitude == 0:
-            results.append((index[i][0], 0))
+            results.append((index[i][0], 0.0))
             continue
         results.append((index[i][0], each / (a_magnitude[i] * b_magnitude)))
     results.sort(key=lambda x: x[1], reverse=True)
