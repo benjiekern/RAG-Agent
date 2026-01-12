@@ -1,0 +1,9 @@
+langsmith==0.5.2
+python-dotenv==1.2.1
+tiktoken==0.12.0
+
+openai
+pypdf
+langchain-community
+langchain-text-splitters
+langchain-openai
