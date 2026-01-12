@@ -1,21 +1,22 @@
 # RAG Agent — Private Document Question Answering System
 
+## Overview
 A Retrieval-Augmented Generation (RAG) system that answers questions over private document collections with grounded, cited responses.
 Supports both .txt and PDF files and provides an end-to-end pipeline from document processing to answer generation.
 
 ## Notable Features:
 
-PDF & .txt document ingestion
+- PDF & .txt document ingestion
 
-Recursive chunking with overlap
+- Recursive chunking with overlap
 
-OpenAI embeddings + vector similarity search
+- OpenAI embeddings + vector similarity search
 
-Grounded answers with explicit citations
+- Grounded answers with explicit citations
 
-Modular architecture (retriever, generator, pipeline)
+- Modular architecture (retriever, generator, pipeline)
 
-Optional LangSmith tracing for observability
+- Optional LangSmith tracing for observability
 
 ## Setup
 Clone the repository
@@ -36,8 +37,11 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Edit .env.example: rename it to .env and add your API keys:
+Create `.env` from the example and add your API keys:
 ```
+copy .env.example .env     # Windows
+# cp .env.example .env     # macOS/Linux
+
 OPENAI_API_KEY=your_key_here
 
 # Optional observability
