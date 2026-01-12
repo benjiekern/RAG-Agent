@@ -1,8 +1,6 @@
+from app.retriever.embeddings import chunk_text, load_texts, embed_documents
 import math
-
-from chunking import chunk_text
 from pathlib import Path
-from embeddings import embed_texts
 
 DOCS_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "docs"
 
@@ -11,21 +9,15 @@ def normalize(v):
     return [x / mag for x in v] if mag != 0 else v
 
 def build_index():
-    raw_chunks = []
-    sources = []
-
-    for file in DOCS_DIR.glob("*.txt"):
-        text = file.read_text(encoding="utf-8")
-        for chunk in chunk_text(text):
-            raw_chunks.append(chunk)
-            sources.append(file.name)
-
-    vectors = embed_texts(raw_chunks)
+    texts = load_texts()
+    chunks = chunk_text(texts)
+    vectors = embed_documents(chunks)
     vectors = [normalize(v) for v in vectors]
 
-    index = [
-        (sources[i], i+1, raw_chunks[i], vectors[i])
-        for i in range(len(raw_chunks))
-    ]
+    index = []
+    for i, (doc, vec) in enumerate(zip(chunks, vectors), start=1):
+        source = doc.metadata.get("source", "unknown")
+        text = doc.page_content
+        index.append((source, i, text, vec))
 
     return index
