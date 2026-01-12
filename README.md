@@ -3,7 +3,7 @@
 A Retrieval-Augmented Generation (RAG) system that answers questions over private document collections with grounded, cited responses.
 Supports both .txt and PDF files and provides an end-to-end pipeline from document processing to answer generation.
 
-# Notable Features:
+## Notable Features:
 
 PDF & .txt document ingestion
 
@@ -14,6 +14,8 @@ OpenAI embeddings + vector similarity search
 Grounded answers with explicit citations
 
 Modular architecture (retriever, generator, pipeline)
+
+Optional LangSmith tracing for observability
 
 ## Setup
 Clone the repository
@@ -37,6 +39,8 @@ pip install -r requirements.txt
 Edit .env.example: rename it to .env and add your API keys:
 ```
 OPENAI_API_KEY=your_key_here
+
+# Optional observability
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_API_KEY=your_langsmith_key_here
 LANGCHAIN_PROJECT=rag-agent-demo
@@ -78,4 +82,4 @@ OpenAI API
 
 Vector similarity search
 
-LangSmith
+LangSmith (optional observability)
