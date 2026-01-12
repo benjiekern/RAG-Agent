@@ -20,7 +20,7 @@ Optional LangSmith tracing for observability
 ## Setup
 Clone the repository
 ```
-git clone https://github.com/yourusername/RAG-Agent.git
+git clone https://github.com/benjiekern/RAG-Agent.git
 cd RAG-Agent
 ```
 
