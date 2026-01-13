@@ -44,12 +44,11 @@ copy .env.example .env
 ```
 
 ```
-OPENAI_API_KEY=your_key_here
-
-Optional observability
-LANGCHAIN_TRACING_V2=true
-LANGCHAIN_API_KEY=your_langsmith_key_here
-LANGCHAIN_PROJECT=rag-agent-demo
+export LANGSMITH_TRACING=true
+export LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+export LANGSMITH_API_KEY=YOUR_KEY_GOES_HERE
+export LANGSMITH_PROJECT=pr-nautical-dime-88
+export OPENAI_API_KEY=YOUR_KEY_GOES_HERE
 ```
 
 Add your documents
@@ -89,12 +88,11 @@ cp .env.example .env
 ```
 
 ```
-OPENAI_API_KEY=your_key_here
-
-Optional observability
-LANGCHAIN_TRACING_V2=true
-LANGCHAIN_API_KEY=your_langsmith_key_here
-LANGCHAIN_PROJECT=rag-agent-demo
+export LANGSMITH_TRACING=true
+export LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+export LANGSMITH_API_KEY=YOUR_KEY_GOES_HERE
+export LANGSMITH_PROJECT=pr-nautical-dime-88
+export OPENAI_API_KEY=YOUR_KEY_GOES_HERE
 ```
 
 ## Post Setup
