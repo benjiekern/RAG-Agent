@@ -73,7 +73,7 @@ cd RAG-Agent
 Create virtual environment
 ```
 python3 -m venv .venv
-# source .venv/bin/activate
+source .venv/bin/activate
 ```
 
 Install dependencies
@@ -83,7 +83,7 @@ pip3 install -r requirements.txt
 
 Create `.env` from the example and add your API keys:
 ```
-# cp .env.example .env
+cp .env.example .env
 
 OPENAI_API_KEY=your_key_here
 
