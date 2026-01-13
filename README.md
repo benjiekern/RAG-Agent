@@ -19,6 +19,8 @@ Supports both .txt and PDF files and provides an end-to-end pipeline from docume
 - Optional LangSmith tracing for observability
 
 ## Setup
+
+### Windows
 Clone the repository
 ```
 git clone https://github.com/benjiekern/RAG-Agent.git
@@ -28,8 +30,7 @@ cd RAG-Agent
 Create virtual environment
 ```
 python -m venv .venv
-.venv\Scripts\activate   # Windows
-# source .venv/bin/activate   # macOS/Linux
+.venv\Scripts\activate
 ```
 
 Install dependencies
@@ -39,15 +40,15 @@ pip install -r requirements.txt
 
 Create `.env` from the example and add your API keys:
 ```
-copy .env.example .env     # Windows
-# cp .env.example .env     # macOS/Linux
+copy .env.example .env
+```
 
-OPENAI_API_KEY=your_key_here
-
-# Optional observability
-LANGCHAIN_TRACING_V2=true
-LANGCHAIN_API_KEY=your_langsmith_key_here
-LANGCHAIN_PROJECT=rag-agent-demo
+```
+export LANGSMITH_TRACING=true
+export LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+export LANGSMITH_API_KEY=YOUR_KEY_GOES_HERE
+export LANGSMITH_PROJECT=pr-nautical-dime-88
+export OPENAI_API_KEY=YOUR_KEY_GOES_HERE
 ```
 
 Add your documents
@@ -60,6 +61,51 @@ Run the system
 
 ```
 python -m app.main
+```
+
+
+### MacOS/Linux
+Clone the repository
+```
+git clone https://github.com/benjiekern/RAG-Agent.git
+cd RAG-Agent
+```
+
+Create virtual environment
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install dependencies
+```
+pip3 install -r requirements.txt
+```
+
+Create `.env` from the example and add your API keys:
+```
+cp .env.example .env
+```
+
+```
+export LANGSMITH_TRACING=true
+export LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+export LANGSMITH_API_KEY=YOUR_KEY_GOES_HERE
+export LANGSMITH_PROJECT=pr-nautical-dime-88
+export OPENAI_API_KEY=YOUR_KEY_GOES_HERE
+```
+
+## Post Setup
+Add your documents
+
+Place any .txt and/or .pdf files in:
+
+data/docs/
+
+Run the system
+
+```
+python3 -m app.main
 ```
 
 Ask a question:
