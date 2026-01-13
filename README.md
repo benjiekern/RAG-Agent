@@ -41,10 +41,12 @@ pip install -r requirements.txt
 Create `.env` from the example and add your API keys:
 ```
 copy .env.example .env
+```
 
+```
 OPENAI_API_KEY=your_key_here
 
-# Optional observability
+Optional observability
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_API_KEY=your_langsmith_key_here
 LANGCHAIN_PROJECT=rag-agent-demo
@@ -84,10 +86,12 @@ pip3 install -r requirements.txt
 Create `.env` from the example and add your API keys:
 ```
 cp .env.example .env
+```
 
+```
 OPENAI_API_KEY=your_key_here
 
-# Optional observability
+Optional observability
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_API_KEY=your_langsmith_key_here
 LANGCHAIN_PROJECT=rag-agent-demo
