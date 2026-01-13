@@ -2,9 +2,12 @@ from openai import OpenAI
 from app.prompts import build_prompt
 from app.retriever.search import search_chunks
 
-client = OpenAI()
+def get_client():
+    return OpenAI()
+
 
 def call_llm(prompt: str) -> str:
+    client = get_client()
     response = client.chat.completions.create(
         model="gpt-4.1-mini",
         messages=[

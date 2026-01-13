@@ -4,7 +4,6 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from openai import OpenAI
 from pathlib import Path
 
-client = OpenAI()
 DOCS_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "docs"
 
 def load_texts():
